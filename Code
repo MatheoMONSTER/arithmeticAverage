@@ -1,0 +1,45 @@
+using System;
+
+namespace średnia_arytmetyczna
+{
+    class arithmeticAverage
+    {
+        private int a;
+        private int n;
+        private int i;
+        private double w = 0.0;
+
+        public arithmeticAverage(int a1, int n1, int i1)
+        {
+            a = a1;
+            n = n1;
+            i = i1;
+
+
+        }
+        public void average()
+        {
+            Console.WriteLine("Input number of numbers: ");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Input data: ");
+            for(i=0; i<n; i++)
+            {
+                a = int.Parse(Console.ReadLine());
+                w += a;
+            }
+            Console.WriteLine("The arithmetic average is: {0} ",w / n);
+        }
+        public override string ToString()
+        {
+            return $"{w / n}";
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            arithmeticAverage arithmetic1 = new arithmeticAverage(0,0,0);
+            arithmetic1.average();
+        }
+    }
+}
